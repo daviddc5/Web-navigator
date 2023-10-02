@@ -1,18 +1,41 @@
-# Web-navigator
-Web navigator codecademy project using stacks
-This  project, Web Navigator, simulates the navigational operations of a web browser such as :
-opening a new web page,
-navigating back a page and
-going forward a page. We will use the Stack class to maintain the history of visited pages with a backPages stack and a nextPages stack.Image of stacks
-When we open a new page, we push the previous page on the backPages stack. When we revisit an old page and then visit a new page from there, we clear any content in the nextPages stack.
+# Web Navigator: A Codecademy Project
 
-When we revisit a back page, we push the current page on the nextPages stack. Like the back button and the next button on a web browser, the back page and next page operations can be enabled or disabled depending on the state of the two stacks. For example, if the backPages stack is empty, the back operation is disabled and will be enabled only when the stack has content.
+## Introduction
 
-User input is required to:
+The **Web Navigator** project is inspired by the core navigational operations of a web browser. Leveraging the concept of data stacks, this simulation offers operations such as:
+- Opening a new web page
+- Navigating to the previous page
+- Advancing to the next page
 
-enter a new page to be visited,
-navigate backward or forward a page, and
-to quit the program.
-The option to navigate forward or backward is conditional depending on user input and the state of the stacks. We will explain this in more detail in the relevant tasks.
+## Key Features
 
-At every operation other than quitting, we display information about the current page and the top element of the two stacks
+### Stack-Based Navigation
+
+The project uses the Stack class to emulate a browser's history mechanism. Specifically:
+- **`backPages` Stack**: Maintains a record of previously visited pages
+- **`nextPages` Stack**: Keeps track of the pages that can be navigated forward to
+
+### Navigational Operations
+
+- **Opening a New Page**: When a user visits a new page, the previous page is pushed onto the `backPages` stack. If they navigate to a new page from an older one, the `nextPages` stack is cleared to maintain consistency
+- **Navigating Backward**: Allows the user to go back to the previous page. The current page will be pushed onto the `nextPages` stack
+- **Navigating Forward**: Users can advance to the subsequent page if they've navigated backward before
+
+### User Interactions
+
+The application provides an interactive experience, allowing users to:
+- Enter a URL of a new page they want to visit
+- Choose to navigate either backward or forward
+- Exit the program
+
+## Conditional Navigation
+
+The availability of forward and backward navigation options is conditional. For instance, the backward navigation feature is only accessible if there are pages stored in the `backPages` stack
+
+## Display Feedback
+
+After each operation, the application provides feedback by displaying:
+- The URL of the current page
+- The top elements from both the `backPages` and `nextPages` stacks, giving a peek into the navigation history
+
+
